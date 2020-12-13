@@ -6,6 +6,8 @@ namespace ProjetoAula219
 {
     class Program
     {
+     
+
         static void Main(string[] args)
         {
             List<Product> list = new List<Product>();
@@ -14,7 +16,7 @@ namespace ProjetoAula219
             list.Add(new Product("Notebook", 1200));
             list.Add(new Product("IPhone", 900.00));
 
-            Comparison<Product> prop = CompareProducts;
+            Comparison<Product> prop = (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
 
             list.Sort(prop);
 
@@ -24,9 +26,6 @@ namespace ProjetoAula219
             }
         }
 
-        static int CompareProducts(Product p1, Product p2)
-        {
-            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
-        }
+
     }
 }
