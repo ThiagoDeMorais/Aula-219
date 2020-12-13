@@ -14,7 +14,9 @@ namespace ProjetoAula219
             list.Add(new Product("Notebook", 1200));
             list.Add(new Product("IPhone", 900.00));
 
-            list.Sort(CompareProducts);
+            Comparison<Product> prop = CompareProducts;
+
+            list.Sort(prop);
 
             foreach (Product element in list)
             {
