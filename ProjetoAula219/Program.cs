@@ -14,12 +14,17 @@ namespace ProjetoAula219
             list.Add(new Product("Notebook", 1200));
             list.Add(new Product("IPhone", 900.00));
 
-            list.Sort();
+            list.Sort(CompareProducts);
 
             foreach (Product element in list)
             {
                 Console.WriteLine(element);
             }
+        }
+
+        static int CompareProducts(Product p1, Product p2)
+        {
+            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
         }
     }
 }
